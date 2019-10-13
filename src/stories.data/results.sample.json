@@ -1,0 +1,261 @@
+{
+  "data": {
+    "search": {
+      "repositoryCount": 12,
+      "edges": [
+        {
+          "node": {
+            "name": "angular-ui-form-validation",
+            "url": "https://github.com/nelsonomuto/angular-ui-form-validation",
+            "description": "Directives for angularjs field validation",
+            "primaryLanguage": { "name": "JavaScript" },
+            "languages": {
+              "nodes": [
+                { "name": "JavaScript" },
+                { "name": "HTML" },
+                { "name": "CSS" }
+              ]
+            },
+            "releases": { "totalCount": 10 },
+            "forkCount": 53,
+            "pullRequests": { "totalCount": 9 },
+            "stargazers": { "totalCount": 187 },
+            "issues": { "totalCount": 82 },
+            "createdAt": "2013-12-19T05:13:53Z",
+            "pushedAt": "2017-10-22T15:19:19Z",
+            "updatedAt": "2019-08-13T15:32:13Z"
+          }
+        },
+        {
+          "node": {
+            "name": "angular-validation-demo",
+            "url": "https://github.com/kadamwhite/angular-validation-demo",
+            "description": "Demonstration of basic validation using HTML5 form elements, Angular.js, and Angular UI",
+            "primaryLanguage": { "name": "JavaScript" },
+            "languages": { "nodes": [{ "name": "JavaScript" }] },
+            "releases": { "totalCount": 0 },
+            "forkCount": 2,
+            "pullRequests": { "totalCount": 0 },
+            "stargazers": { "totalCount": 5 },
+            "issues": { "totalCount": 1 },
+            "createdAt": "2013-03-29T07:51:31Z",
+            "pushedAt": "2013-03-29T20:50:16Z",
+            "updatedAt": "2019-08-14T18:45:04Z"
+          }
+        },
+        {
+          "node": {
+            "name": "ng-formalizer",
+            "url": "https://github.com/inetsys/ng-formalizer",
+            "description": "Angular (&UI) form generator and validation from JSON",
+            "primaryLanguage": { "name": "JavaScript" },
+            "languages": {
+              "nodes": [
+                { "name": "JavaScript" },
+                { "name": "CSS" },
+                { "name": "HTML" }
+              ]
+            },
+            "releases": { "totalCount": 33 },
+            "forkCount": 1,
+            "pullRequests": { "totalCount": 0 },
+            "stargazers": { "totalCount": 4 },
+            "issues": { "totalCount": 2 },
+            "createdAt": "2014-07-25T11:27:52Z",
+            "pushedAt": "2016-10-20T10:44:30Z",
+            "updatedAt": "2017-11-14T16:37:43Z"
+          }
+        },
+        {
+          "node": {
+            "name": "ng-forms",
+            "url": "https://github.com/dalejodc/ng-forms",
+            "description": "💻 Build amazing forms with Angular + Semantic UI. This example shows forms with template aproximation .html, data aproximation .ts and a not validated form.",
+            "primaryLanguage": { "name": "TypeScript" },
+            "languages": { "nodes": [{ "name": "TypeScript" }] },
+            "releases": { "totalCount": 0 },
+            "forkCount": 1,
+            "pullRequests": { "totalCount": 0 },
+            "stargazers": { "totalCount": 5 },
+            "issues": { "totalCount": 0 },
+            "createdAt": "2018-09-13T04:56:16Z",
+            "pushedAt": "2018-12-03T02:31:41Z",
+            "updatedAt": "2019-06-24T20:49:18Z"
+          }
+        },
+        {
+          "node": {
+            "name": "AngularReactiveForm-signIn-signUP-",
+            "url": "https://github.com/Abdofcih/AngularReactiveForm-signIn-signUP-",
+            "description": "Angular form with validation and bootstrap UI",
+            "primaryLanguage": { "name": "TypeScript" },
+            "languages": {
+              "nodes": [
+                { "name": "JavaScript" },
+                { "name": "TypeScript" },
+                { "name": "HTML" }
+              ]
+            },
+            "releases": { "totalCount": 0 },
+            "forkCount": 0,
+            "pullRequests": { "totalCount": 0 },
+            "stargazers": { "totalCount": 0 },
+            "issues": { "totalCount": 0 },
+            "createdAt": "2019-04-07T23:36:42Z",
+            "pushedAt": "2019-05-25T03:20:22Z",
+            "updatedAt": "2019-05-25T03:20:23Z"
+          }
+        },
+        {
+          "node": {
+            "name": "hValidator",
+            "url": "https://github.com/BrianMcBrayer/hValidator",
+            "description": "An angular form validator for vanilla html5 and kendo ui",
+            "primaryLanguage": { "name": "JavaScript" },
+            "languages": { "nodes": [{ "name": "JavaScript" }] },
+            "releases": { "totalCount": 0 },
+            "forkCount": 0,
+            "pullRequests": { "totalCount": 0 },
+            "stargazers": { "totalCount": 0 },
+            "issues": { "totalCount": 0 },
+            "createdAt": "2014-12-03T00:20:02Z",
+            "pushedAt": "2014-12-06T07:38:41Z",
+            "updatedAt": "2014-12-06T07:38:43Z"
+          }
+        },
+        {
+          "node": {
+            "name": "Angular-Simple-Validation",
+            "url": "https://github.com/jeffjenk/Angular-Simple-Validation",
+            "description": "Simple form validation for AngularJS using ngMessages. Works with Angular UI Select and supports custom validation methods.",
+            "primaryLanguage": { "name": "CSS" },
+            "languages": { "nodes": [{ "name": "CSS" }] },
+            "releases": { "totalCount": 0 },
+            "forkCount": 0,
+            "pullRequests": { "totalCount": 0 },
+            "stargazers": { "totalCount": 0 },
+            "issues": { "totalCount": 0 },
+            "createdAt": "2015-02-23T20:23:17Z",
+            "pushedAt": "2016-04-05T22:11:27Z",
+            "updatedAt": "2015-02-23T22:00:34Z"
+          }
+        },
+        {
+          "node": {
+            "name": "Angular-Pro-Tutorials",
+            "url": "https://github.com/awalton3/Angular-Pro-Tutorials",
+            "description": "This code covers Angular Pro topics such as,  component APIs, forms & validation, custom filters, UI router, serving, restful APIs, and final project (Authorization module with Parse)",
+            "primaryLanguage": { "name": "JavaScript" },
+            "languages": {
+              "nodes": [
+                { "name": "JavaScript" },
+                { "name": "HTML" },
+                { "name": "CSS" }
+              ]
+            },
+            "releases": { "totalCount": 0 },
+            "forkCount": 0,
+            "pullRequests": { "totalCount": 0 },
+            "stargazers": { "totalCount": 1 },
+            "issues": { "totalCount": 0 },
+            "createdAt": "2018-04-05T22:58:52Z",
+            "pushedAt": "2018-04-23T22:48:07Z",
+            "updatedAt": "2018-04-23T22:48:08Z"
+          }
+        },
+        {
+          "node": {
+            "name": "angular-reactive-form",
+            "url": "https://github.com/abenjamin1313/angular-reactive-form",
+            "description": "Reactive forms is an Angular technique for creating forms in a reactive style. Angular reactive forms facilitate a reactive style of programming that favors explicit management of the data flowing between a non-UI data model (typically retrieved from a server) and a UI-oriented form model that retains the states and values of the HTML controls on screen. Reactive forms offer the ease of using reactive patterns, testing, and validation.",
+            "primaryLanguage": { "name": "TypeScript" },
+            "languages": {
+              "nodes": [
+                { "name": "TypeScript" },
+                { "name": "JavaScript" },
+                { "name": "CSS" }
+              ]
+            },
+            "releases": { "totalCount": 0 },
+            "forkCount": 0,
+            "pullRequests": { "totalCount": 0 },
+            "stargazers": { "totalCount": 0 },
+            "issues": { "totalCount": 0 },
+            "createdAt": "2018-05-07T23:37:52Z",
+            "pushedAt": "2018-05-08T14:02:07Z",
+            "updatedAt": "2018-05-08T14:21:49Z"
+          }
+        },
+        {
+          "node": {
+            "name": "Product-Management-AngularJS",
+            "url": "https://github.com/NajiSalloum/Product-Management-AngularJS",
+            "description": "A business web applications using Angular, including the following: Styling the view with bootstrap, Using the Built-in Services ($http, $resource). Faking the Web Service using $httpBackend service in ngMockE2E module to develop our Angular application without having a back-end web service in place. Routing to multiple views and defining Nested Routing State. Building data entry form. Using Mask Edit using ui-mask directive available in the Angular UI. Utils toolsto get the input following  cases where input must follow a specific format, for example, a phone number or product code, Using a Date Picker, as part of UI Bootstrap Submitting and validation forms by Preparing the form for validation, identifying required fields , making invalid elements, displaying validation messages, using Angular Validation Attributes and Preventing Form Submittal Building and using custom Angular Services ",
+            "primaryLanguage": { "name": "JavaScript" },
+            "languages": {
+              "nodes": [
+                { "name": "JavaScript" },
+                { "name": "HTML" },
+                { "name": "CSS" }
+              ]
+            },
+            "releases": { "totalCount": 0 },
+            "forkCount": 0,
+            "pullRequests": { "totalCount": 0 },
+            "stargazers": { "totalCount": 0 },
+            "issues": { "totalCount": 0 },
+            "createdAt": "2019-08-27T20:53:36Z",
+            "pushedAt": "2019-08-27T21:04:15Z",
+            "updatedAt": "2019-08-27T21:04:18Z"
+          }
+        },
+        {
+          "node": {
+            "name": "SpringBoot-And-Angular-springRest-querydsl-jmapperproject",
+            "url": "https://github.com/muhammadrefaat91/SpringBoot-And-Angular-springRest-querydsl-jmapperproject",
+            "description": "Spring Boot, Angular JS, (CRUD Examples using $http angular service) spring rest, querydsl, jmapper working together. shows integrating AngularJS with Spring MVC 4. We will create a CRUD application using Spring REST API on back-end and AngularJS encapsulated within plain html on front-end, communicating asynchronously with server using $http service. We will also perform all sorts of validation on UI using AngularJS Form",
+            "primaryLanguage": { "name": "Java" },
+            "languages": {
+              "nodes": [
+                { "name": "Shell" },
+                { "name": "Batchfile" },
+                { "name": "Java" }
+              ]
+            },
+            "releases": { "totalCount": 0 },
+            "forkCount": 0,
+            "pullRequests": { "totalCount": 0 },
+            "stargazers": { "totalCount": 0 },
+            "issues": { "totalCount": 0 },
+            "createdAt": "2017-04-09T12:36:21Z",
+            "pushedAt": "2017-04-09T12:52:42Z",
+            "updatedAt": "2017-04-09T12:46:25Z"
+          }
+        },
+        {
+          "node": {
+            "name": "TheScripts",
+            "url": "https://github.com/VaishNathani/TheScripts",
+            "description": "This application is only UI in Bootstrap 4 and Angular 5 and TypeScript and not a fully functional application showcases Bootstrap 4 with Angular 5. The stress on showcasing Bootstrap 4 features. The features like: Cards, Grids, Carousel, Accordian, Navbars with drop downs, Tables and Pagination, Forms, Validations, Progress bars, Lists and badges and few more. The site gets updated with new features time and again..",
+            "primaryLanguage": { "name": "HTML" },
+            "languages": {
+              "nodes": [
+                { "name": "TypeScript" },
+                { "name": "JavaScript" },
+                { "name": "HTML" }
+              ]
+            },
+            "releases": { "totalCount": 0 },
+            "forkCount": 0,
+            "pullRequests": { "totalCount": 0 },
+            "stargazers": { "totalCount": 0 },
+            "issues": { "totalCount": 0 },
+            "createdAt": "2018-04-09T09:06:16Z",
+            "pushedAt": "2018-04-16T09:15:07Z",
+            "updatedAt": "2018-04-23T08:54:30Z"
+          }
+        }
+      ]
+    }
+  }
+}
