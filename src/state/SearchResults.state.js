@@ -1,52 +1,44 @@
-import { put, debounce, call, select, takeLatest } from 'redux-saga/effects';
-import axios from 'axios';
+import { put, debounce, select, takeLatest } from 'redux-saga/effects';
 import {
-  SEARCH,
   SEARCH_INPUT,
   CANCEL_SEARCH,
-  RESULTS_FOUND,
-  SEARCH_ERROR,
-  UPDATE_CANCEL_TOKEN_SOURCE
-} from '../actions/SearchResults.actions';
-import { apiSearch } from '../api';
-
-export const searchResultsActions = {
-  search: payload => ({ type: SEARCH, payload }),
-  cancelSearch: payload => ({ type: CANCEL_SEARCH, payload }),
-  resultsFound: payload => ({ type: RESULTS_FOUND, payload }),
-  searchError: payload => ({ type: SEARCH_ERROR, payload })
-};
+  START_NEW_SEARCH,
+  SET_SEARCH_ERROR,
+  SET_SEARCH_RESULTS,
+  SET_SEARCH_REPO_QUERY,
+  SET_SEARCH_LOADING
+} from '../actions';
 
 export const initialState = {
-  searchTerm: '',
-  cancelTokenSource: axios.CancelToken.source(),
+  searchRepoQuery: () => {}, // apollo client search repo query placeholder
+  searchTerm: '', // user input
   results: [],
   error: '',
   loading: false
 };
 
-let cancelCount = 0;
 export const searchResultsReducers = (state = initialState, action) => {
-  const { searchTerm, results, error } = action.payload || {};
   switch (action.type) {
-    case SEARCH_INPUT:
-      return { ...state, searchTerm };
-    case SEARCH: {
+    case START_NEW_SEARCH: {
       return { ...state, loading: true };
     }
-    case UPDATE_CANCEL_TOKEN_SOURCE: {
-      const cancelTokenSource = axios.CancelToken.source();
-      cancelTokenSource.id = ++cancelCount;
-      return { ...state, cancelTokenSource, cancelCount };
+    case SEARCH_INPUT: {
+      return { ...state, searchTerm: action.payload };
     }
     case CANCEL_SEARCH: {
       return { ...state, loading: false };
     }
-    case RESULTS_FOUND: {
-      return { ...state, results, loading: false };
+    case SET_SEARCH_RESULTS: {
+      return { ...state, results: action.payload || [] };
     }
-    case SEARCH_ERROR: {
-      return { ...state, error, loading: false };
+    case SET_SEARCH_ERROR: {
+      return { ...state, error: action.payload || '', loading: false };
+    }
+    case SET_SEARCH_REPO_QUERY: {
+      return { ...state, searchRepoQuery: action.payload };
+    }
+    case SET_SEARCH_LOADING: {
+      return { ...state, loading: action.payload || false };
     }
     default: {
       return state;
@@ -59,37 +51,20 @@ export const searchResultsSagas = [
   takeLatest(CANCEL_SEARCH, cancelSearch)
 ];
 
-const getCancelTokenSource = state => state.searchResults.cancelTokenSource;
-
 function* cancelSearch() {
-  const cancelTokenSource = yield select(getCancelTokenSource);
-  console.log('cancelling search...', {
-    cancelTokenSourceId: cancelTokenSource.id
-  });
-  cancelTokenSource.cancel();
-  yield put({
-    type: UPDATE_CANCEL_TOKEN_SOURCE
-  });
+  // TODO: cancel any pending search requests
 }
 
+const getSearchRepoQuery = state => state.searchResults.searchRepoQuery;
+
 function* search(action) {
-  const { searchTerm } = action.payload;
+  const searchTerm = action.payload;
   yield put({ type: CANCEL_SEARCH });
-  try {
-    yield put({ type: SEARCH });
-    const cancelTokenSource = yield select(getCancelTokenSource);
-    console.log('calling search api....', {
-      cancelTokenSourceId: cancelTokenSource.id
-    });
-    const results = yield call(apiSearch, { searchTerm, cancelTokenSource });
-    yield put({ type: RESULTS_FOUND, payload: { results } });
-  } catch (err) {
-    if (axios.isCancel(err)) {
-      console.log('Request canceled', err.message);
+  yield put({ type: START_NEW_SEARCH });
+  const searchRepoQuery = yield select(getSearchRepoQuery);
+  searchRepoQuery({
+    variables: {
+      searchTerm
     }
-    yield put({
-      type: SEARCH_ERROR,
-      payload: { error: err.message }
-    });
-  }
+  })
 }

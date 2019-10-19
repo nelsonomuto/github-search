@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { SearchField, SearchWrapper, SearchIconButton, SearchLinearProgress } from '../elements';
-import SearchIcon from '@material-ui/icons/Search';
+import { SearchBarField, SearchBarWrapper, SearchBarIconButton, SearchBarLinearProgress } from '../elements';
+import SearchBarIcon from '@material-ui/icons/Search';
 
-Search.propTypes = {
+SearchBar.propTypes = {
   loading: PropTypes.bool,
   onSearch: PropTypes.func,
   onCancelSearch: PropTypes.func
 };
-export default function Search({ loading, onSearch, onCancelSearch }) {
+export default function SearchBar({ loading, onSearch, onCancelSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const onChange = ({ target: { value } }) => {
@@ -32,13 +32,16 @@ export default function Search({ loading, onSearch, onCancelSearch }) {
       if (keyCode === 13) {
         onSearch(searchTerm);
       }
+      if (keyCode === 8) {
+        onCancelSearch();
+      }
     }
   };
 
   return (
-    <SearchWrapper>
-      {loading && <SearchLinearProgress />}
-      <SearchField
+    <SearchBarWrapper>
+      {loading && <SearchBarLinearProgress />}
+      <SearchBarField
         id="standard-search"
         label="Find github repo"
         type="search"
@@ -48,12 +51,12 @@ export default function Search({ loading, onSearch, onCancelSearch }) {
           onKeyDown
         }}
       />
-      <SearchIconButton
+      <SearchBarIconButton
         onClick={() => searchTerm.trim() && onSearch(searchTerm)}
         aria-label="search"
       >
-        <SearchIcon />
-      </SearchIconButton>
-    </SearchWrapper>
+        <SearchBarIcon />
+      </SearchBarIconButton>
+    </SearchBarWrapper>
   );
 }

@@ -5,7 +5,10 @@ import { ResultsGridWrapper, Error } from '../elements';
 import { AgGridReact } from 'ag-grid-react';
 
 Results.propTypes = {
-  error: PropTypes.string,
+  searchTerm: PropTypes.string,
+  error: PropTypes.shape({
+    message: PropTypes.string
+  }),
   loading: PropTypes.bool,
   results: PropTypes.array
 };
@@ -21,17 +24,19 @@ const columnDefs = [
     width: 450
   }
 ];
-export default function Results({ loading, error, results = [] }) {
+export default function Results({ searchTerm, loading, error, results = [] }) {
   if (loading) {
     return <Skeleton count={1} height={300} />;
   }
   if (error) {
-    return <Error>{error}</Error>;
+    return <Error>{error.message}</Error>;
   }
   const onRowDoubleClicked = ({ data: { url } }) => {
     window.open(url);
   };
-
+  if(searchTerm && results.length === 0) {
+    return <h4>No results</h4>
+  }
   return (
     <ResultsGridWrapper>
       {results.length > 0 && (

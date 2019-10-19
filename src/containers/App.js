@@ -1,48 +1,58 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import GlobalStyles from '../elements/global-styles';
-import Search from '../components/Search';
-import Results from '../components/Results';
+import Search from './Search';
+import Results from './Results';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { appActions } from '../actions';
 import PropTypes from 'prop-types';
+import { useLazyQuery } from '@apollo/react-hooks';
+import { SEARCH_REPO } from '../api/query';
+import { appActions } from '../actions';
 
 App.propTypes = {
-  searchInput: PropTypes.func,
-  cancelSearch: PropTypes.func,
-  searchResults: PropTypes.shape({
-    error: PropTypes.string,
-    loading: PropTypes.bool,
-    results: PropTypes.array
-  })
+  setSearchLoading: PropTypes.func,
+  setSearchError: PropTypes.func,
+  setSearchResults: PropTypes.func,
+  setSearchRepoQuery: PropTypes.func
 };
-function App({ searchInput, cancelSearch, searchResults }) {
-  const { loading, error, results } = searchResults;
+function App({
+  setSearchLoading,
+  setSearchError,
+  setSearchRepoQuery,
+  setSearchResults
+}) {
+  const [searchRepoQuery, { loading, error, data }] = useLazyQuery(SEARCH_REPO);
+  useEffect(() => {
+    setSearchRepoQuery(searchRepoQuery);
+  }, [setSearchRepoQuery, searchRepoQuery]);
+
+  useEffect(() => {
+    setSearchLoading(loading);
+  }, [setSearchLoading, loading]);
+
+  useEffect(() => {
+    setSearchError(error);
+  }, [setSearchError, error]);
+
+  useEffect(() => {
+    const results = data && data.search.edges.map(edge => edge.node);
+    setSearchResults(results);
+  }, [setSearchResults, data]);
+
   return (
     <>
       <GlobalStyles />
-      <Search
-        loading={loading}
-        error={error}
-        onSearch={searchTerm => searchInput({ searchTerm })}
-        onCancelSearch={cancelSearch}
-      />
-      <Results loading={loading} error={error} results={results} />
+      <Search />
+      <Results />
     </>
   );
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(App);
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(appActions, dispatch);
-}
-
-function mapStateToProps(state) {
-  return {
-    searchResults: state.searchResults
-  };
 }
