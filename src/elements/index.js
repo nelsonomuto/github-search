@@ -2,23 +2,23 @@ import styled from '@emotion/styled';
 import { TextField } from '@material-ui/core';
 import { IconButton, LinearProgress } from '@material-ui/core';
 
-export const SearchField = styled(TextField)`
+export const SearchBarField = styled(TextField)`
   padding: 0 0 10px 0;
   grid-row: 2;
   grid-column: 1 / span 2;
 `;
 
-export const SearchWrapper = styled.div`
+export const SearchBarWrapper = styled.div`
   display: grid;
   grid-template-rows: 1fr 10fr;
   grid-template-columns: 1fr 1fr;
   max-width: 500px;
 `;
 
-export const SearchLinearProgress = styled(LinearProgress)`
+export const SearchBarLinearProgress = styled(LinearProgress)`
   grid-column: 1 / span 2;
 `;
-export const SearchIconButton = styled(IconButton)`
+export const SearchBarIconButton = styled(IconButton)`
   grid-row: 2;
 `;
 

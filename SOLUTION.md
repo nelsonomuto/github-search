@@ -6,6 +6,7 @@ Where I would go next with this app.
 - [ ] Refactor handling the github token in src/keys.json ~ perhaps implement a login
 
 ## Technical
+- [ ] Add cancel any pending search requests implementation for apollo client
 - [ ] Make sure solution works across all modern browsers
 - [ ] Use SSR to render page to improve loading time
 - [ ] Refactor text content for i18n instead of hardcoded strings
